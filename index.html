@@ -2,23 +2,38 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>초대장</title>
     <style>
-        body {
+        html, body {
             margin: 0;
             padding: 0;
-            background-color: #000; /* 혹시 양옆이 남을 경우 배경색 */
-            text-align: center;
+            height: 100%;
+            background-color: black; /* 혹시 대비용 */
+            overflow: hidden; /* 스크롤 방지 */
         }
+
+        .wrapper {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
         img {
             width: 100%;
-            height: auto; /* 세로 비율 유지 → 이미지 안 잘림 */
-            display: block;
+            height: 100%;
+            object-fit: contain;  
+            /* contain = 화면 안에서 이미지 전체 표시 (잘림 없음) */
+            background-color: black; 
         }
     </style>
 </head>
 <body>
-    <img src="2026MobileInvitations.png" alt="초대장">
+    <div class="wrapper">
+        <img src="2026MobileInvitations.png" alt="초대장">
+    </div>
 </body>
 </html>
